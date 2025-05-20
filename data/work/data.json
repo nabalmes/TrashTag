@@ -1,0 +1,129 @@
+[
+    {
+     "id": 1,
+      "name": "Paper",
+      "category": ["Paper", "Biodegradable Waste", "Dry General Waste"],
+      "binColor": ["Blue", "Green", "Black"],
+      "description": "This category includes materials made from paper, a compacted sheet of cellulose fibers or flattened tree pulp. They are highly flammable due to their thin, dry and porous nature, as well as their fairly low (auto)ignition temperature at 481°F.",
+      "degradeTime": "2 to 6 weeks",
+      "statistics": "The Philippines generates about 4.2 million tons of paper waste yearly but only 20% of that is being recycled."
+    },
+    {
+     "id": 2,
+      "name": "Plastic Bottle",
+      "category": ["Recyclable", "Nonbiodegradable"],
+      "binColor": ["Blue", "Black"],
+      "description": "This category includes bottles made from plastic, a synthetic or semi-synthetic material of polymers usually derived from petrochemicals. They are lightweight, versatile, and durable.",
+      "degradeTime": "450 to 1,000 years",
+      "statistics": "On average, 163 million PET bottles are being dumped daily by Filipinos, and only 9% of that is being recycled."
+    },
+    {
+     "id": 3,
+      "name": "Aluminum Soda Can",
+      "category": ["Recyclable", "Nonbiodegradable"],
+      "binColor": ["Blue", "Black"],
+      "description": "This category includes cans made from aluminum, a material that is odorless, non-toxic, lightweight, and corrosion resistant.",
+      "degradeTime": "450 to 1,000 years",
+      "statistics": "Aluminum is one of the most recycled materials globally, with approximately 75 percent of all aluminum ever produced still being in use."
+    },
+    {
+     "id": 4,
+      "name": "Broken Glass",
+      "category": ["Sharps"],
+      "binColor": ["Red"],
+      "description": "This category includes pieces of shattered glass that pose a risk of puncture and cuts if handled incorrectly.",
+      "degradeTime": "Does not biodegrade",
+      "statistics": "Glass makes up 5% of the landfill waste in the Philippines but only 30% of it is recovered due to improper segregation."
+    },
+    {
+     "id": 5,
+      "name": "Battery",
+      "category": ["Toxic/Hazardous"],
+      "binColor": ["Red"],
+      "description": "This category includes all kinds of batteries from alkaline to lithium-ion. They are corrosive, flammable, and toxic.",
+      "degradeTime": "More than 100 years",
+      "statistics": "In the Philippines, 95% of used batteries end up in landfills and contaminate nearby soil and water."
+    },
+    {
+     "id": 6,
+      "name": "Snack Wrappers",
+      "category": ["Non-biodegradable", "Plastic"],
+      "binColor": ["Black"],
+      "description": "They could be plastic-based wrappers from sandwich, candy, chips, etc.",
+      "degradeTime": "20-100 years",
+      "statistics": "Millions are discarded daily; they contribute significantly to ocean microplastic pollution."
+    },
+    {
+     "id": 7,
+      "name": "Tissue",
+      "category": ["Biodegradable", "Paper"],
+      "binColor": ["Green"],
+      "description": "They could be used paper tissue, facial wipes, table napkins, etc.",
+      "degradeTime": "2-4 weeks",
+      "statistics": "Over 270,000 trees are cut daily to produce tissue products."
+    },
+    {
+     "id": 8,
+      "name": "Styro (Polystyrene)",
+      "category": ["NB", "Plastic"],
+      "binColor": ["Black"],
+      "description": "Foam packaging or containers often used for food.",
+      "degradeTime": "500+ years (some say never fully)",
+      "statistics": "Takes up 30% of landfill space globally; rarely recycled."
+    },
+    {
+     "id": 9,
+      "name": "Used Stationery Items",
+      "category": ["NB", "Mixed"],
+      "binColor": ["Black"],
+      "description": "They could be used pens, coloring material made of plastic casings and ink components.",
+      "degradeTime": "500+ years",
+      "statistics": "An estimated 1.6 billion disposable pens are discarded each year in the U.S. alone."
+    },
+    {
+     "id": 10,
+      "name": "Plastic Utensils",
+      "category": ["NB", "Plastic"],
+      "binColor": ["Black"],
+      "description": "They could be single-use spoons, forks, knives.",
+      "degradeTime": "400-1000 years",
+      "statistics": "Over 40 billion plastic utensils are used and thrown away each year in the U.S."
+    },
+    {
+     "id": 11,
+      "name": "Aluminum Foil",
+      "category": ["Recyclable (if clean)"],
+      "binColor": ["Blue"],
+      "description": "Foil used in cooking or packaging.",
+      "degradeTime": "200-500 years (if not recycled)",
+      "statistics": "Recycling one aluminum can saves enough energy to run a TV for 3 hours."
+    },
+    {
+     "id": 12,
+      "name": "Banana Peel",
+      "category": ["Biodegradable"],
+      "binColor": ["Green"],
+      "description": "Organic kitchen waste that decomposes quickly under the right conditions.",
+      "degradeTime": "2-5 weeks",
+      "statistics": "Food waste makes up over 30% of municipal garbage globally."
+    },
+    {
+     "id": 13,
+      "name": "Cottons",
+      "category": ["Biodegradable"],
+      "binColor": ["Green", "Black", "Gray"],
+      "description": "Used in personal hygiene and cosmetics; plant-based but often mixed with plastic. Compost clean, pure cotton only.",
+      "degradeTime": "1-5 months (depends if pure and composted properly)",
+      "statistics": "Globally, billions of cotton swabs and pads are discarded annually. Plastic parts hinder biodegradability."
+    },
+    {
+     "id": 14,
+      "name": "Face Mask",
+      "category": ["Non-Biodegradable"],
+      "binColor": ["Red", "Yellow"],
+      "description": "Primarily made from polypropylene and often includes metal nose strips and elastic ear loops.",
+      "degradeTime": "450 years or more",
+      "statistics": "An estimated 129 billion face masks are used globally each month since COVID-19."
+    }
+  ]
+  

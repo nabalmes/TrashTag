@@ -1,0 +1,120 @@
+:root {
+	--font-main: 'OpticianSans', sans-serif;
+	--font-sans: 'Inter', sans-serif;
+	--font-serif: 'DM Serif Display', serif;
+	--font-mono: monospace;
+
+	--font-size-sm: clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem);
+	--font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
+	--font-size-md: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
+	--font-size-lg: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);
+	--font-size-xl: clamp(1.95rem, 1.56vw + 1.56rem, 2.81rem);
+	--font-size-xxl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+	--font-size-xxxl: clamp(3.05rem, 3.54vw + 2.17rem, 5rem);
+
+	--color-main: hsl(252, 75%, 60%);
+	--color-main-900: hsl(248, 77%, 24%);
+	--color-main-800: hsl(248, 69%, 31%);
+	--color-main-700: hsl(250, 63%, 40%);
+	--color-main-600: hsl(251, 56%, 50%);
+	--color-main-500: hsl(252, 75%, 60%);
+	--color-main-400: hsl(253, 80%, 71%);
+	--color-main-300: hsl(255, 86%, 77%);
+	--color-main-200: hsl(256, 92%, 86%);
+	--color-main-100: hsl(18, 87%, 94%);
+
+	--color-dark: hsl(0, 0%, 13%);
+	--color-dark-400: hsl(210, 2%, 18%);
+	--color-dark-300: hsl(180, 1%, 26%);
+	--color-dark-200: hsl(180, 1%, 33%);
+	--color-dark-100: hsl(150, 1%, 41%);
+
+	--color-grey-dark: hsl(0, 0%, 20%);
+	--color-grey-dark-400: hsl(0, 0%, 27%);
+	--color-grey-dark-300: hsl(0, 0%, 34%);
+	--color-grey-dark-200: hsl(0, 0%, 41%);
+	--color-grey-dark-100: hsl(0, 0%, 47%);
+
+	--color-grey: hsl(0, 0%, 60%);
+	--color-grey-400: hsl(0, 0%, 65%);
+	--color-grey-300: hsl(0, 0%, 71%);
+	--color-grey-200: hsl(0, 0%, 76%);
+	--color-grey-100: hsl(0, 0%, 82%);
+	
+	--color-light-400: hsl(0, 0%, 95%);
+	--color-light-300: hsl(0, 0%, 95%); 
+	--color-light-200: hsl(0, 0%, 95%);
+	--color-light-100: hsl(0, 0%, 96%);
+	--color-light: hsl(0, 0%, 100%);
+
+	--color-dark-032: hsla(0, 0%, 16%, .50);
+	--color-light-032: hsla(0, 0%, 100%, .50);
+
+	--color-dark-075: hsla(0, 0%, 13%, .75);
+	--color-light-075: hsla(0, 0%, 87%, .75);
+
+	--color-danger: hsl(1, 97%, 62%);
+	--color-warning: hsl(38, 98%, 50%);
+	--color-info: hsl(194, 100%, 47%);
+	--color-success: hsl(127, 71%, 41%);
+
+	--color-sub: hsl(213, 11%, 48%);
+	--color-border: hsl(0, 0%, 93%);
+
+	--blur-1: 8px;
+	--blur-2: 16px;
+
+	--space-1: 8px;
+	--space-2: 16px;
+	--space-3: 24px;
+	--space-4: 32px;
+	--space-5: 40px;
+	--space-6: 48px;
+	--space-7: 56px;
+	--space-8: 64px;
+	--space-9: 72px;
+	--space-10: 80px;
+	--space-11: 88px;
+
+	--radii-1: 4px;
+	--radii-2: 8px;
+	--radii-3: 16px;
+	--radii-4: 32px;
+	--radii-5: 50px;
+	--radii-10: 100px;
+	--radii-round: 50%;
+
+	--width-400: 400px;
+	--width-600: 600px;
+	--width-800: 800px;
+	--width-1000: 1000px;
+	--width-1200: 1200px;
+
+	--mq-mob: 480px;
+	--mq-tab: 768px;
+	--mq-md: 1024px;
+	--mq-lg: 1200px;
+	--mq-xl: 1201px;
+
+	--shadow-soft: 0 20px 25px -5px rgba(0, 0, 0, / .10), 0 10px 10px -5px rgba(0, 0, 0, / .04);
+	--shadow-main: 0px 5px 15px -5px rgba(229, 9, 20, 0.749);
+
+	--shadows-small: 0 5px 10px rgba(0, 0, 0, 0.12);
+	--shadows-medium: 0 8px 30px rgba(0, 0, 0, 0.12);
+	--shadows-large: 0 30px 60px rgb(0, 0, 0);
+
+	--cursor-project--light: url('../assets/media/cursor--project-32-light.png'), url('../assets/media/cursor--project-32-light.svg'), url('../assets/media/cursor--project-32-light.jpg'), auto;
+	--cursor-project--dark: url('../assets/media/cursor--project-32-dark.png'), url('../assets/media/cursor--project-32-dark.svg'), url('../assets/media/cursor--project-32-dark.jpg'), auto;
+	
+	--mesh-bgc--dark: hsla(0,0%,13%,1);
+	--mesh-bgi--dark:
+	radial-gradient(at 24% 90%, hsl(66deg 21% 20% / 75%) 0px, transparent 50%), radial-gradient(at 70% 99%, rgb(1, 82, 75) 0px, transparent 50%);
+	
+	--mesh-bgc--light: hsla(0,0%,87%,1);
+	--mesh-bgi--light:
+	radial-gradient(at 24% 90%, hsl(66deg 21% 20% / 42%) 0px, transparent 50%), radial-gradient(at 70% 99%, hsl(175deg 76% 20% / 49%) 0px, transparent 50%);
+	
+
+	--animated-text--light: linear-gradient(-45deg, hsl(133, 81%, 46%), hsl(159deg 73% 64%), hsl(0, 0%, 95%), hsl(0, 0%, 95%));
+	--animated-text--dark: linear-gradient(-45deg, rgb(13, 168, 117), rgb(3, 160, 108), hsla(0, 3%, 6%, 0.705), hsla(0, 4%, 5%, 0.87));
+}

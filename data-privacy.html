@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#212121">
+	<meta name="author" content="Neil Adrian Balmes">
+	<meta name="description"
+		content="A designer and developer from Philippines. Interested in product design, design system, React or Svelte and everything vanilla.">
+	<meta name="keywords"
+		content="software engineering, software development, web development, software, web, engineering, development, developer, designer, user interface, user experience, developer relation, product design, web design, design, design system, system, React, framework, Svelte, vanilla, javascript, html, css, node, philippines, batangas, computer science">
+
+	<meta property="og:title" content="TrashTag">
+	<meta property="og:type" content="website">
+	<meta property="og:image" content="assets/media/NAB-twh--dark.png">
+	<meta property="og:url" content="">
+	<meta property="og:description"
+		content="A developer from Philippines. Interested in product design, design system, React or Svelte and everything vanilla.">
+
+	<title>NAB — Developer and Designer</title>
+	<link rel="shortcut icon" type="image/png" href="assets/favicon/favicon-light.svg"
+		media="(prefers-color-scheme: dark)">
+	<link rel="shortcut icon" type="image/png" href="assets/favicon/favicon.svg" media="(prefers-color-scheme: light)">
+
+	<link rel="stylesheet" href="css/root.css">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/login.css">
+
+
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="drop-shadow"></div>
+		<div id="login-card" class="data-privacy-box">
+			<h1>Data Privacy Consent</h1>
+			<div class="text">
+				By using this website, you agree to the collection, use, and storage of your personal data in accordance with the Data Privacy Act of 2012 (R.A. 10173).
+
+				We collect only necessary information (e.g., name, email, contact details) to provide services, respond to inquiries, or improve user experience. Your data is protected and will not be shared without your consent, unless required by law.
+				
+				You have the right to access, update, or request deletion of your data at any time.
+			</div>
+			<div class="text">
+				By clicking <b style="color: #bfb7b7;font-style: normal;">“I Agree”</b>, submitting a form, or continuing to use this website, you acknowledge that you have read, understood, and accepted the terms of this Data Privacy Consent Statement.
+			</div>
+			<div class="button-container">
+				<button id="agree-btn">I Agree</button>
+				<button style="background: transparent;border: 1px solid #fff;color: #fff;" (click)="onLogin()">Close</button>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/nanobar/0.4.2/nanobar.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/draggable/1.0.0-beta.12/draggable.min.js"></script>
+
+	<script type="module" src="js/app.js"></script>
+	<script type="module" src="js/theme.js"></script>
+	<script>
+		const agreed = localStorage.getItem('agreedToPrivacy');
+		if (agreed == 'true') {
+			window.location.href = 'login.html';
+		}
+		document.getElementById('agree-btn').addEventListener('click', function () {
+			localStorage.setItem('agreedToPrivacy', 'true');
+			window.location.href = 'login.html';
+		});
+	</script>
+</body>
+</html>

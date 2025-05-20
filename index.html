@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#212121">
+	<meta name="author" content="Neil Adrian Balmes">
+	<meta name="description" content="A designer and developer from Philippines. Interested in product design, design system, React or Svelte and everything vanilla.">
+	<meta name="keywords" content="software engineering, software development, web development, software, web, engineering, development, developer, designer, user interface, user experience, developer relation, product design, web design, design, design system, system, React, framework, Svelte, vanilla, javascript, html, css, node, philippines, batangas, computer science">
+
+	<meta property="og:title" content="TrashTag">
+	<meta property="og:type" content="website">
+	<meta property="og:image" content="assets/media/NAB-twh--dark.png">
+	<meta property="og:url" content="">
+	<meta property="og:description" content="A developer from Philippines. Interested in product design, design system, React or Svelte and everything vanilla.">
+
+	<title>NAB — Developer and Designer</title>
+	<link rel="shortcut icon" type="image/png" href="assets/favicon/light.svg" media="(prefers-color-scheme: dark)">
+	<link rel="shortcut icon" type="image/png" href="assets/favicon/dark.svg" media="(prefers-color-scheme: light)">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'><link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+   
+    <link rel="stylesheet" href="css/root.css">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/sidebar.css">
+    
+
+</head>
+<body>
+	<header class="header">
+		<div class="header-left">
+			<span hidden class="logo-text">NAB</span>
+		</div>
+		<div class="header-center">
+			<div class="header-center">
+				<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+				<div class="progress">
+					<div class="circle done">
+						<span class="label">1</span>
+						<span class="title">Finish</span>
+					</div>
+					<span class="bar done"></span>
+					<div class="circle done">
+						<span class="label">2</span>
+						<span class="title">Finish</span>
+					</div>
+					<span class="bar half"></span>
+					<div class="circle active">
+						<span class="label">3</span>
+						<span class="title">Finish</span>
+					</div>
+					<span class="bar"></span>
+					<div class="circle">
+						<span class="label">4</span>
+						<span class="title">Finish</span>
+					</div>
+					<span class="bar"></span>
+					<div class="circle">
+						<span class="label">5</span>
+						<span class="title">Finish</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="header-right">
+			<button class="action-button system-pref-button" role="switch" aria-label="light/dark mode">
+				<svg class="system-pref system-pref--dark-mode" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+			</button>
+			<audio src="audio/light-on.mp3" class="theme-audio--light-on" data-attribute="adapted from user 160033 file on freesound.org https://freesound.org/people/160033/sounds/366184/ under CC BY-NC 3.0"></audio>
+			<audio src="audio/light-off.mp3" class="theme-audio--light-off" data-attribute="adapted from user 160033 file on freesound.org https://freesound.org/people/160033/sounds/366184/ under CC BY-NC 3.0"></audio>
+		</div>
+	</header>
+	<div class="sidebar">
+		<div class="logo_details">
+		  <!-- <i class="bx bxl-audible icon"></i> -->
+		  <div class="logo_name">
+			<img src="assets/favicon/light.svg" alt="" media="(prefers-color-scheme: dark)">
+		  </div>
+		  
+		  <i class="bx bx-menu" id="btn"></i>
+		</div>
+		<ul class="nav-list">
+		  <li style="display: none;">
+			<i class="bx bx-search"></i>
+			<input type="text" placeholder="Search...">
+			 <span class="tooltip">Search</span>
+		  </li>
+		  <li>
+			<a class="active">
+			  <i class="bx bx-grid-alt"></i>
+			  <span class="link_name">Organization</span>
+			</a>
+			<span class="tooltip">Organization</span>
+		  </li>
+		  <li>
+			<a href="user.html">
+			  <i class="bx bx-user"></i>
+			  <span class="link_name">User</span>
+			</a>
+			<span class="tooltip">User</span>
+		  </li>
+		  <li>
+			<a href="infographics.html">
+			  <i class="bx bx-chat"></i>
+			  <span class="link_name">Infographics</span>
+			</a>
+			<span class="tooltip">Infographics</span>
+		  </li>
+		  <li>
+			<a href="about.html">
+			  <i class="bx bx-pie-chart-alt-2"></i>
+			  <span class="link_name">About Us</span>
+			</a>
+			<span class="tooltip">About Us</span>
+		  </li>
+		  <li>
+			<a href="contact.html">
+			  <i class="bx bx-folder"></i>
+			  <span class="link_name">Contact US</span>
+			</a>
+			<span class="tooltip">Contact US</span>
+		  </li>
+		  <!-- <li>
+			<a>
+			  <i class="bx bx-cart-alt"></i>
+			  <span class="link_name">Order</span>
+			</a>
+			<span class="tooltip">Order</span>
+		  </li>
+		  <li>
+			<a>
+			  <i class="bx bx-cog"></i>
+			  <span class="link_name">Settings</span>
+			</a>
+			<span class="tooltip">Settings</span>
+		  </li> -->
+		  <li class="profile">
+			<div class="profile_details">
+			  <img src="profile.jpg" alt="profile image">
+			  <div class="profile_content">
+				<div class="name">Anna Jhon</div>
+				<div class="designation">User</div>
+			  </div>
+			</div>
+			<i class="bx bx-log-out" id="log_out" role="button" tabindex="0" onclick="logout()"></i>
+		  </li>
+		</ul>
+	</div>
+	<main class="main">
+		
+		<section id="home" class="page section--home active">
+			<div class="hero">
+				<h1 class="nab-name">
+					<span>TRASH</span>
+					<span>TAG </span>
+				</h1>
+				<p class="nab-lead">SCAN, SORT, EARN REWARDS</p>
+			</div>
+			<form class="search-container">
+				<input type="text" id="search-bar" placeholder="What kind of waste do you have?">
+				<a href="#"><img class="search-icon" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"></a>
+			</form>
+			<div class="section-body projects-wrapper">
+				<div class="projects-header">
+					<div class="projects-header__tabs">
+						<div class="project__tab active" data-filter="all">
+							<a href="#!">All</a>
+						</div>
+					</div>
+					<!-- <div class="projects-header__filter">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-filter"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+
+						
+							Filter:
+							by Year
+							by Name
+						
+					</div> -->
+				</div>
+
+				<div class="projects" data-wastes></div>
+
+				<template data-waste>
+					<article class="project">
+						<a data-waste-link target="_blank" rel="noopener noreferrer">
+							<div class="project__image">
+								<img src="" alt="" data-waste-image>
+							</div>
+	
+							<div class="project__content">
+								<div class="project__text">
+									<div class="project__title" data-waste-title></div>
+									<div class="project__description" data-waste-description></div>
+									<div class="project__year" data-waste-year></div>
+								</div>
+								<div class="project__right">
+								</div>
+							</div>
+						</a>
+					</article>
+				</template>
+					
+				<div hidden class="project-cursor">
+					<span class="project-cursor__text">View Project</span>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<!-- <footer hidden class="footer">
+		<div class="copyright">
+			&copy; 1995 - <span class="year"></span> Neil Adrian Balmes. All rights reserved.
+		</div>
+	</footer> -->
+
+	<button class="scroll-button">
+		<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+	</button>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/nanobar/0.4.2/nanobar.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/draggable/1.0.0-beta.12/draggable.min.js"></script>
+	
+	<script type="module" src="js/app.js"></script>
+	<script type="module" src="js/theme.js"></script>
+
+	<script>
+		 if (localStorage.getItem('agreedToPrivacy') !== 'true' || !sessionStorage.getItem('user')) 
+		{
+			window.location.href = 'login.html';
+		}
+
+		function initializeSidebarToggle() {
+			const sidebar = document.querySelector('.sidebar');
+			const closeBtn = document.querySelector('#btn');
+			const searchBtn = document.querySelector('.bx-search');
+			const container = document.querySelector('.main');
+			const header = document.querySelector('.header');
+
+			if (closeBtn && searchBtn && sidebar) {
+				closeBtn.addEventListener('click', function () {
+					sidebar.classList.toggle('open');
+					header.classList.toggle("adjust");
+				    container.classList.toggle("adjust");
+				});
+
+				searchBtn.addEventListener('click', function () {
+					sidebar.classList.toggle('open');
+					menuBtnChange();
+				});
+			}
+		}
+
+		function menuBtnChange() {
+			const closeBtn = document.querySelector('#btn');
+			const sidebar = document.querySelector('.sidebar');
+			if (sidebar && closeBtn) {
+				if (sidebar.classList.contains('open')) {
+					closeBtn.classList.replace('bx-menu', 'bx-menu-alt-right');
+				} else {
+					closeBtn.classList.replace('bx-menu-alt-right', 'bx-menu');
+				}
+			}
+		}
+
+		// function adjustContainerWidth() {
+		// 	const closeBtn = document.querySelector('#btn');
+		// 	const sidenav = document.querySelector('.sidebar');
+			
+
+		// 	closeBtn.addEventListener("click", () => {
+		// 		header.classList.toggle("adjust");
+		// 		container.classList.toggle("adjust");
+		// 	})
+		// }
+
+
+
+		// Call the initializer after the DOM is fully loaded
+		document.addEventListener('DOMContentLoaded', function () {
+			initializeSidebarToggle();
+
+
+			const currentUser = JSON.parse(sessionStorage.getItem('user'));
+			if (currentUser) {
+			const nameDiv = document.querySelector('.name');
+			nameDiv.textContent = `${currentUser.fname} ${currentUser.lname}`;
+			} else {
+			// Optional: redirect to login if session is missing
+			window.location.href = 'login.html';
+			}
+		});
+
+		function logout() {
+			sessionStorage.removeItem('user');
+			window.location.href = 'login.html';
+		}
+	</script>
+</body>
+</html>

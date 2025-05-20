@@ -1,0 +1,162 @@
+[
+	{
+		"id": 1,
+		"codename": "project1",
+		"name": "Paper",
+		"alias": "iNet",
+		"description": "This category includes materials made from paper, a compacted sheet of cellulose fibers or flattened tree pulp. They are highly flammable due to their thin, dry and porous nature, as well as their fairly low (auto)ignition temperature at 481°F.",
+		"tag": "web",
+		"year": "2022",
+		"icon": "icon1",
+		"thumb": "waste1.jpg"
+	},
+	{
+		"id": 2,
+		"codename": "project2",
+		"name": "Plastic Bottle",
+		"alias": "BPO",
+		"description": "This category includes bottles made from plastic, a synthetic or semi-synthetic material of polymers usually derived from petrochemicals. They are lightweight, versatile, and durable.",
+		"tag": "web",
+		"year": "2022",
+		"icon": "icon2",
+		"thumb": "waste2.jpg"
+	},
+	{
+		"id": 3,
+		"codename": "project3",
+		"name": "Aluminum Soda Can",
+		"alias": "PBX",
+		"description": "This category includes cans made from aluminum, a material that is odorless, non-toxic, lightweight, and corrosion resistant.",
+		"tag": "web",
+		"year": "2022",
+		"icon": "icon3",
+		"thumb": "waste3.jpg"
+	},
+	{
+		"id": 4,
+		"codename": "project4",
+		"name": "Broken Glass",
+		"alias": "PCI",
+		"description": "This category includes pieces of shattered glass that pose a risk of puncture and cuts if handled incorrectly.",
+		"tag": "web",
+		"year": "2022",
+		"icon": "icon4",
+		"thumb": "waste4.jpg"
+	},
+	{
+		"id": 5,
+		"codename": "project5",
+		"name": "Battery",
+		"alias": "Share Events",
+		"description": "This category includes all kinds of batteries from alkaline to lithium-ion. They are corrosive, flammable, and toxic.",
+		"tag": "web",
+		"year": "2022",
+		"icon": "icon5",
+		"thumb": "waste5.jpg"
+	},
+	{
+		"id": 6,
+		"codename": "project6",
+		"name": "Snack Wrappers",
+		"alias": "Pudding",
+		"description": "They could be plastic-based wrappers from sandwich, candy, chips, etc.",
+		"tag": "web",
+		"year": "2022",
+		"icon": "icon6",
+		"thumb": "waste6.jpg"
+	},
+	{
+		"id": 7,
+		"codename": "project7",
+		"name": "Tissue",
+		"alias": "Luks",
+		"description": "They could be used paper tissue, facial wipes, table napkins, etc.",
+		"tag": "web",
+		"year": "2022",
+		"icon": "icon7",
+		"thumb": "waste7.jpg"
+	},
+	{
+		"id": 8,
+		"codename": "project8",
+		"name": "tyro (Polystyrene)",
+		"alias": "Zumumu",
+		"description": "Foam packaging or containers often used for food.",
+		"tag": "web",
+		"year": "2022",
+		"icon": "icon8",
+		"thumb": "waste8.jpg"
+	},
+
+	{
+		"id": 9,
+		"codename": "project12",
+		"name": "Used Stationery Items",
+		"alias": "ID Alibi Device Apps",
+		"description": "They could be used pens, coloring material made of plastic casings and ink components.",
+		"tag": "web",
+		"year": "2023",
+		"icon": "icon9",
+		"thumb": "waste9.jpg"
+	},
+
+	{
+		"id": 10,
+		"codename": "project12",
+		"name": "Plastic Utensils",
+		"alias": "ID Alibi Device Apps",
+		"description": "They could be single-use spoons, forks, knives.",
+		"tag": "web",
+		"year": "2023",
+		"icon": "icon9",
+		"thumb": "waste10.jpg"
+	},
+
+	{
+		"id": 11,
+		"codename": "project12",
+		"name": "Aluminum Foil",
+		"alias": "ID Alibi Device Apps",
+		"description": "Foil used in cooking or packaging.",
+		"tag": "web",
+		"year": "2023",
+		"icon": "icon9",
+		"thumb": "waste11.jpg"
+	},
+
+	{
+		"id": 12,
+		"codename": "project12",
+		"name": "Banana Peel",
+		"alias": "ID Alibi Device Apps",
+		"description": "Organic kitchen waste that decomposes quickly under the right conditions.",
+		"tag": "web",
+		"year": "2023",
+		"icon": "icon9",
+		"thumb": "waste12.jpg"
+	},
+
+	{
+		"id": 13,
+		"codename": "project12",
+		"name": "Cottons",
+		"alias": "ID Alibi Device Apps",
+		"description": "Used in personal hygiene and cosmetics; plant-based but often mixed with plastic. Compost clean, pure cotton only.",
+		"tag": "web",
+		"year": "2023",
+		"icon": "icon9",
+		"thumb": "waste13.jpg"
+	},
+
+	{
+		"id": 14,
+		"codename": "project12",
+		"name": "Face Mask",
+		"alias": "ID Alibi Device Apps",
+		"description": "Primarily made from polypropylene and often includes metal nose strips and elastic ear loops.",
+		"tag": "web",
+		"year": "2023",
+		"icon": "icon9",
+		"thumb": "waste14.jpg"
+	}
+]

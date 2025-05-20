@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+.wrapper {
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  height:100vh;
+  width:100%;
+  background:url('http://codingstella.com/wp-content/uploads/2024/01/download-5.jpeg') no-repeat;
+  background-size:cover;
+  background-position:center;
+  animation:animateBg 5s linear infinite;
+}
+
+.drop-shadow {
+  background: rgba(42, 43, 44, 0.336);
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  backdrop-filter: blur(100px);
+}
+
+@keyframes animateBg {
+  100% {
+    filter:hue-rotate(360deg);
+  }
+}
+.login-box {
+  position: relative;
+  width: 400px;
+  height: 450px;
+  background: #f3f3f314;
+  border-radius: 15px;
+  border: 2px solid rgba(255,255,255,.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(15px);
+
+  transition: all 600ms;
+}
+
+.login-box.expand {
+  height: 600px;
+}
+
+#login__form.active{
+  transform: rotateY(0deg);
+  opacity: 1;
+}
+
+#login__form {
+  opacity: 0;
+  // transition:all 700ms;
+}
+
+#sign-up__form{
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+
+#sign-up__form.active{
+    backface-visibility: visible;
+    transition:all 600ms;
+}
+
+.flip {
+    position: absolute;
+}
+
+h2 {
+  font-size:2em;
+  color:#fff;
+  text-align:center;
+}
+.input-box {
+  position:relative;
+  width:310px;
+  margin:30px 0;
+  border-bottom:1px solid #fff;
+}
+.input-box label {
+  position:absolute;
+  top:50%;
+  left:5px;
+  transform:translateY(-50%);
+  font-size:1em;
+  color:#fff;
+  pointer-events:none;
+  transition:.5s;
+}
+.input-box input:focus  ~ label,
+.input-box input:valid  ~ label {
+  top:-5px;
+}
+.input-box input {
+  width:100%;
+  height:50px;
+  background:transparent;
+  border:none;
+  outline:none;
+  font-size:1em;
+  color:#fff;
+  padding:0 35px 0 5px;
+}
+.input-box .icon {
+  position:absolute;
+  right:8px;
+  top:50%;
+  color: #fff;
+  transform: translateY(-50%);
+}
+.remember-forgot {
+  margin:-15px 0 15px;
+  font-size:.9em;
+  color:#fff;
+  display:flex;
+  justify-content:space-between;
+}
+.remember-forgot label input {
+  margin-right:3px;
+}
+.remember-forgot a {
+  color:#fff;
+  text-decoration:none;
+}
+.remember-forgot a:hover {
+  text-decoration:underline;
+}
+button {
+  width:100%;
+  height:40px;
+  background-color:#fff;
+  border:none;
+  border-radius:40px;
+  cursor:pointer;
+  font-size:1em;
+  color:#000;
+  font-weight: 500;
+}
+.register-link {
+  font-size:.9em;
+  color:#fff;
+  text-align:center;
+  margin:25px 0 10px;
+}
+.register-link p a {
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  cursor: pointer;
+}
+.register-link p a:hover {
+  text-decoration:underline;
+}
+@media (max-width:500px) {
+  .login-box {
+    width:100%;
+    height:100vh;
+    border:none;
+    border-radius:0;
+  }
+  .input-box {
+    width:290px;
+  }
+}
+
+
+/* DATA PRIVACY CSS */
+
+.data-privacy-box {
+    position: relative;
+    width: 400px;
+    background: #f3f3f314;
+    border-radius: 15px;
+    border: 2px solid rgba(255,255,255,.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    backdrop-filter: blur(15px);
+  
+    transition: all 600ms;
+  }
+
+  .data-privacy-box h1 {
+    font-size: 30px;
+    width: 100%;
+    padding: 20px 10px;
+    border-bottom: 1px solid;
+    font-weight: 900;
+  }
+
+  .data-privacy-box .text {
+    padding: 30px 20px 0;
+    font-style: italic;
+    font-size: 15px;
+    text-align: justify;
+  }
+
+  .data-privacy-box .button-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 30px 20px;
+ }
+  

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#212121">
+	<meta name="author" content="Neil Adrian Balmes">
+	<meta name="description"
+		content="A designer and developer from Philippines. Interested in product design, design system, React or Svelte and everything vanilla.">
+	<meta name="keywords"
+		content="software engineering, software development, web development, software, web, engineering, development, developer, designer, user interface, user experience, developer relation, product design, web design, design, design system, system, React, framework, Svelte, vanilla, javascript, html, css, node, philippines, batangas, computer science">
+
+	<meta property="og:title" content="TrashTag">
+	<meta property="og:type" content="website">
+	<meta property="og:image" content="assets/media/NAB-twh--dark.png">
+	<meta property="og:url" content="">
+	<meta property="og:description"
+		content="A developer from Philippines. Interested in product design, design system, React or Svelte and everything vanilla.">
+
+	<title>NAB — Developer and Designer</title>
+	<link rel="shortcut icon" type="image/png" href="assets/favicon/favicon-light.svg"
+		media="(prefers-color-scheme: dark)">
+	<link rel="shortcut icon" type="image/png" href="assets/favicon/favicon.svg" media="(prefers-color-scheme: light)">
+
+	<link rel="stylesheet" href="css/root.css">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/login.css">
+
+
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="drop-shadow"></div>
+		<div id="login-card" class="login-box">
+			<form id="login__form" action="" class="flip active">
+				<h2>Login</h2>
+
+				<div class="input-box">
+					<span class="icon">
+						<!-- <ion-icon name="mail"></ion-icon> -->
+					</span>
+					<input type="text" name="uname" [(ngModel)]="loginObj.userName" required="">
+					<label>Email</label>
+				</div>
+
+				<div class="input-box">
+					<span class="icon">
+						<!-- <ion-icon name="lock-closed"></ion-icon> -->
+					</span>
+					<input type="password" name="pword" [(ngModel)]="loginObj.password" required>
+					<label>Password</label>
+				</div>
+
+				<div class="remember-forgot">
+					<label><input type="checkbox"> Remember me</label>
+					<!-- <a href="#">Forgot Password?</a> -->
+				</div>
+
+				<button type="submit">Login</button>
+
+				<div class="register-link">
+					<p>Don't have an account? <a id="register-text" data-action="false">Register</a></p>
+				</div>
+			</form>
+
+			<form id="sign-up__form" action="" class="flip">
+				<h2>Register</h2>
+
+				<div class="input-box">
+					<span class="icon">
+						<!-- <ion-icon name="mail"></ion-icon> -->
+					</span>
+					<input type="text" name="fname" require>
+					<label>First Name</label>
+				</div>
+
+				<div class="input-box">
+					<span class="icon">
+						<!-- <ion-icon name="mail"></ion-icon> -->
+					</span>
+					<input type="text" name="lname" required>
+					<label>Last Name</label>
+				</div>
+
+				<div class="input-box">
+					<span class="icon">
+						<!-- <ion-icon name="mail"></ion-icon> -->
+					</span>
+					<input type="text" name="email" required>
+					<label>Email</label>
+				</div>
+
+				<div class="input-box">
+					<span class="icon">
+						<!-- <ion-icon name="lock-closed"></ion-icon> -->
+					</span>
+					<input type="password" name="password" required>
+					<label>Password</label>
+				</div>
+
+				<button type="submit">Sign up</button>
+
+				<div class="register-link">
+					<p>Already have an account? <a id="login-text" data-action="false">Login</a></p>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/nanobar/0.4.2/nanobar.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/draggable/1.0.0-beta.12/draggable.min.js"></script>
+
+	<script type="module" src="js/app.js"></script>
+	<script type="module" src="js/theme.js"></script>
+	<script>
+	const currentUser = JSON.parse(sessionStorage.getItem('user'));
+	   if (currentUser) {
+			window.location.href = 'index.html';
+		} else {
+			const agreed = localStorage.getItem('agreedToPrivacy');
+			if (!agreed || agreed !== 'true') {
+				window.location.href = 'data-privacy.html';
+			}
+		}
+
+
+		document.addEventListener('DOMContentLoaded', () => {
+
+			try {
+				const registerText = document.getElementById('register-text');
+				const loginText = document.getElementById('login-text');
+				const login_card = document.getElementById('login-card');
+				const registerForm = document.getElementById('sign-up__form');
+				const loginForm = document.getElementById('login__form');
+
+				registerText.addEventListener('click', (event) => {
+					console.log("Button clicked!");
+					login_card.style.transformStyle = 'preserve-3d';
+					login_card.style.transform = 'rotateY(-180deg)';
+					login_card.classList.add('expand');
+					registerForm.classList.toggle('active');
+					loginForm.classList.remove('active');
+				});
+
+				loginText.addEventListener('click', (event) => {
+					login_card.style.transform = 'rotateY(0deg)';
+					registerForm.classList.toggle('active');
+					loginForm.classList.add('active');
+					login_card.classList.remove('expand');
+				});
+			} catch (error) {
+				console.error("Error with login/register form functionality:", error);
+			}
+
+		});
+
+
+		document.getElementById('sign-up__form').addEventListener('submit', function (e) {
+			e.preventDefault(); // prevent page reload
+
+			const fname = this.fname.value.trim();
+			const lname = this.lname.value.trim();
+			const email = this.email.value.trim().toLowerCase();
+			const password = this.password.value;
+
+			if (!fname || !lname || !email || !password) {
+			alert('Please fill in all fields.');
+			return;
+			}
+
+			// Check if user already exists
+			const existingUsers = JSON.parse(localStorage.getItem('users')) || [];
+			const isDuplicate = existingUsers.some(user => user.email === email);
+
+			if (isDuplicate) {
+			alert('User already exists.');
+			return;
+			}
+
+			// Save new user
+			const newUser = { fname, lname, email, password };
+			existingUsers.push(newUser);
+			localStorage.setItem('users', JSON.stringify(existingUsers));
+
+			alert('Registration successful!');
+			// Optional: Redirect to login
+			window.location.href = 'login.html';
+		});
+
+
+		document.getElementById('login__form').addEventListener('submit', function (e) {
+			e.preventDefault();
+
+			const email = this.uname.value.trim().toLowerCase();
+			const password = this.pword.value;
+
+			const users = JSON.parse(localStorage.getItem('users')) || [];
+
+			const matchedUser = users.find(user => user.email === email && user.password === password);
+
+			if (matchedUser) {
+			// Store session info in sessionStorage
+			sessionStorage.setItem('user', JSON.stringify(matchedUser));
+
+			alert('Login successful!');
+			window.location.href = 'index.html'; // redirect to dashboard or home
+			} else {
+			alert('Invalid email or password');
+			}
+		});
+
+	</script>
+</body>
+
+</html>
