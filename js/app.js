@@ -186,13 +186,13 @@ fetch(PROJECT_URL)
 function createWasteCard(project) {
   const card = projectTemplate.content.cloneNode(true).children[0];
 
-//   const link = card.querySelector('[data-waste-link]');
+  const link = card.querySelector('[data-waste-link]');
   const image = card.querySelector('[data-waste-image]');
   const title = card.querySelector('[data-waste-title]');
   const desc = card.querySelector('[data-waste-description]');
   const year = card.querySelector('[data-waste-year]');
 
-//   link.setAttribute('href', project.link || '#');
+  link.setAttribute('href', project.link || '#');
   image.src = PROJECT_IMAGE_PATH + project.thumb;
   title.textContent = project.name;
   desc.textContent = project.description;
