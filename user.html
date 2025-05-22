@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#212121">
+	<meta name="author" content="Neil Adrian Balmes">
+	<meta name="description" content="A designer and developer from Philippines. Interested in product design, design system, React or Svelte and everything vanilla.">
+	<meta name="keywords" content="software engineering, software development, web development, software, web, engineering, development, developer, designer, user interface, user experience, developer relation, product design, web design, design, design system, system, React, framework, Svelte, vanilla, javascript, html, css, node, philippines, batangas, computer science">
+
+	<meta property="og:title" content="TrashTag">
+	<meta property="og:type" content="website">
+	<meta property="og:image" content="assets/media/NAB-twh--dark.png">
+	<meta property="og:url" content="">
+	<meta property="og:description" content="A developer from Philippines. Interested in product design, design system, React or Svelte and everything vanilla.">
+
+	<title>TrashTag</title>
+	<link rel="shortcut icon" type="image/png" href="assets/favicon/light.svg" media="(prefers-color-scheme: dark)">
+	<link rel="shortcut icon" type="image/png" href="assets/favicon/dark.svg" media="(prefers-color-scheme: light)">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'><link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+   
+    <link rel="stylesheet" href="css/root.css">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/sidebar.css">
+    
+
+</head>
+<style>
+	.login-box {
+  position: relative;
+  width: 400px;
+  height: 450px;
+  background: #f3f3f314;
+  border-radius: 15px;
+  border: 2px solid var(--border);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(15px);
+
+  transition: all 600ms;
+}
+
+.login-box.expand {
+  height: 500px;
+}
+
+#login__form.active{
+  transform: rotateY(0deg);
+  opacity: 1;
+}
+
+#login__form {
+  opacity: 0;
+   transition:all 700ms;
+}
+
+#sign-up__form{
+    backface-visibility: hidden;
+}
+
+#sign-up__form.active{
+    backface-visibility: visible;
+    transition:all 600ms;
+}
+
+.flip {
+    position: absolute;
+}
+
+h2 {
+  font-size:2em;
+  color:var(--text);
+  text-align:center;
+}
+.input-box {
+  position:relative;
+  width:310px;
+  margin:30px 0;
+  border-bottom:1px solid var(--border);
+}
+.input-box label {
+  position:absolute;
+  top:50%;
+  left:5px;
+  transform:translateY(-50%);
+  font-size:1em;
+  color: var(--text);
+  pointer-events:none;
+  transition:.5s;
+}
+.input-box input:focus  ~ label,
+.input-box input:valid  ~ label {
+  top:-5px;
+}
+.input-box input {
+  width:100%;
+  height:50px;
+  background:transparent;
+  border:none;
+  outline:none;
+  font-size:1em;
+  color:var(--text);
+  padding:0 35px 0 5px;
+}
+.input-box .icon {
+  position:absolute;
+  right:8px;
+  top:50%;
+  color: var(--text);
+  transform: translateY(-50%);
+}
+
+.input-box input {
+	pointer-events: none;
+}
+
+
+@media (max-width:500px) {
+  .login-box {
+    width:100%;
+    height:100vh;
+    border:none;
+    border-radius:0;
+  }
+  .input-box {
+    width:290px;
+  }
+}
+</style>
+<body>
+	<div class="main-loader">
+		<div class="load-wrapper">
+			<div class="loader loader-big">
+			</div>
+			<div class="loader loader-small rotate"></div>
+		</div>
+	</div>
+	<header class="header">
+		<div class="header-left">
+			<span hidden class="logo-text">NAB</span>
+		</div>
+		<div class="header-center">
+			<div class="header-center">
+				<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+				<!-- <div class="progress">
+					<div class="circle">
+						<span class="label">1</span>
+						<span class="title">Reward1</span>
+					</div>
+					<span class="bar"></span>
+					<span class="bar"></span>
+					<div class="circle">
+						<span class="label">2</span>
+						<span class="title">Reward2</span>
+					</div>
+					<span class="bar"></span>
+					<span class="bar"></span>
+					<div class="circle">
+						<span class="label">3</span>
+						<span class="title">Reward3</span>
+					</div>
+					<span class="bar"></span>
+					<span class="bar"></span>
+					<div class="circle">
+						<span class="label">4</span>
+						<span class="title">Reward4</span>
+					</div>
+				</div> -->
+			</div>
+		</div>
+		<div class="header-right">
+			<button class="action-button system-pref-button" role="switch" aria-label="light/dark mode">
+				<svg class="system-pref system-pref--dark-mode" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+			</button>
+			<audio src="audio/light-on.mp3" class="theme-audio--light-on" data-attribute="adapted from user 160033 file on freesound.org https://freesound.org/people/160033/sounds/366184/ under CC BY-NC 3.0"></audio>
+			<audio src="audio/light-off.mp3" class="theme-audio--light-off" data-attribute="adapted from user 160033 file on freesound.org https://freesound.org/people/160033/sounds/366184/ under CC BY-NC 3.0"></audio>
+		</div>
+	</header>
+	<div class="sidebar">
+		<div class="logo_details">
+		  <div class="logo_name">
+			<img src="assets/favicon/light.svg" alt="" media="(prefers-color-scheme: dark)">
+		  </div>
+		  
+		  <i class="bx bx-menu" id="btn"></i>
+		</div>
+		<ul class="nav-list">
+		  <li style="display: none;">
+			<i class="bx bx-search"></i>
+			<input type="text" placeholder="Search...">
+			 <span class="tooltip">Search</span>
+		  </li>
+		  <li>
+			<a href="index.html">
+			  <i class="bx bx-grid-alt"></i>
+			  <span class="link_name">Home</span>
+			</a>
+			<span class="tooltip">Home</span>
+		  </li>
+		  <li>
+			<a class="active">
+			  <i class="bx bx-user"></i>
+			  <span class="link_name">User</span>
+			</a>
+			<span class="tooltip">User</span>
+		  </li>
+		  <li>
+			<a href="infographics.html">
+			  <i class="bx bx-chat"></i>
+			  <span class="link_name">Infographics</span>
+			</a>
+			<span class="tooltip">Infographics</span>
+		  </li>
+		  <li>
+			<a href="about.html">
+			  <i class="bx bx-pie-chart-alt-2"></i>
+			  <span class="link_name">About Us</span>
+			</a>
+			<span class="tooltip">About Us</span>
+		  </li>
+		  <li>
+			<a href="contact.html">
+			  <i class="bx bx-folder"></i>
+			  <span class="link_name">Contact US</span>
+			</a>
+			<span class="tooltip">Contact US</span>
+		  </li>
+		  <li class="profile">
+			<div class="profile_details">
+			  <img src="profile.jpg" alt="profile image">
+			  <div class="profile_content">
+				<div class="name">Anna Jhon</div>
+				<div class="designation">User</div>
+			  </div>
+			</div>
+			<i class="bx bx-log-out" id="log_out" role="button" tabindex="0" onclick="logout()"></i>
+		  </li>
+		</ul>
+	</div>
+	<main class="main">
+		<section id="about" class="page section--about active">
+			<div class="section-header">
+				<div id="login-card" class="login-box expand">
+					<form id="sign-up__form" action="" class="flip">
+						<h2>Information</h2>
+		
+						<div class="input-box">
+							<span class="icon">
+								<ion-icon name="mail"></ion-icon>
+							</span>
+							<input type="text" name="fname" id="fname" require>
+							<label>First Name</label>
+						</div>
+		
+						<div class="input-box">
+							<span class="icon">
+							</span>
+							<input type="text" name="lname" id="lname" required>
+							<label>Last Name</label>
+						</div>
+		
+						<div class="input-box">
+							<span class="icon">
+							</span>
+							<input type="text" name="email" id="email" required>
+							<label>Email</label>
+						</div>
+		
+						<div class="input-box">
+							<span class="icon">
+							</span>
+							<input type="password" name="password" id="password" required>
+							<label>Password</label>
+						</div>
+					</form>
+				</div>	
+			</div>
+		</section>
+
+	</main>
+
+	<button class="scroll-button">
+		<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+	</button>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/nanobar/0.4.2/nanobar.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/draggable/1.0.0-beta.12/draggable.min.js"></script>
+	
+	<!-- <script type="module" src="js/app.js"></script> -->
+	<script type="module" src="js/theme.js"></script>
+
+	<script>
+		 if (localStorage.getItem('agreedToPrivacy') !== 'true' || !sessionStorage.getItem('user')) 
+		{
+			window.location.href = 'login.html';
+		}
+
+
+		function initializeSidebarToggle() {
+			const sidebar = document.querySelector('.sidebar');
+			const closeBtn = document.querySelector('#btn');
+			const searchBtn = document.querySelector('.bx-search');
+			const container = document.querySelector('.main');
+			const header = document.querySelector('.header');
+
+			if (closeBtn && searchBtn && sidebar) {
+				closeBtn.addEventListener('click', function () {
+					sidebar.classList.toggle('open');
+					header.classList.toggle("adjust");
+				    container.classList.toggle("adjust");
+				});
+
+				searchBtn.addEventListener('click', function () {
+					sidebar.classList.toggle('open');
+					menuBtnChange();
+				});
+			}
+		}
+
+		function menuBtnChange() {
+			const closeBtn = document.querySelector('#btn');
+			const sidebar = document.querySelector('.sidebar');
+			if (sidebar && closeBtn) {
+				if (sidebar.classList.contains('open')) {
+					closeBtn.classList.replace('bx-menu', 'bx-menu-alt-right');
+				} else {
+					closeBtn.classList.replace('bx-menu-alt-right', 'bx-menu');
+				}
+			}
+		}
+
+		function logout() {
+			sessionStorage.removeItem('user');
+			window.location.href = 'login.html';
+		}
+
+		// function adjustContainerWidth() {
+		// 	const closeBtn = document.querySelector('#btn');
+		// 	const sidenav = document.querySelector('.sidebar');
+			
+
+		// 	closeBtn.addEventListener("click", () => {
+		// 		header.classList.toggle("adjust");
+		// 		container.classList.toggle("adjust");
+		// 	})
+		// }
+
+		// Call the initializer after the DOM is fully loaded
+		document.addEventListener('DOMContentLoaded', function () {
+			let loader = document.getElementsByClassName("main-loader")[0];
+			console.log(loader);
+			loader.classList.add("load");
+
+			initializeSidebarToggle();
+
+			const currentUser = JSON.parse(sessionStorage.getItem('user'));
+			if (currentUser) {
+			const nameDiv = document.querySelector('.name');
+			nameDiv.textContent = `${currentUser.fname} ${currentUser.lname}`;
+			} else {
+			// Optional: redirect to login if session is missing
+			window.location.href = 'login.html';
+			}
+
+			const session = sessionStorage.getItem('user');
+
+			if (session) {
+				const user = JSON.parse(session);
+				
+				document.getElementById('fname').value = user.fname || '';
+				document.getElementById('lname').value = user.lname || '';
+				document.getElementById('email').value = user.email || '';
+				document.getElementById('password').value = user.password || '';
+			}
+
+			
+		});
+	</script>
+</body>
+</html>
