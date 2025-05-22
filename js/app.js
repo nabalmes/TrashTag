@@ -98,74 +98,13 @@ scrollButton.addEventListener("click", scrollToTop);
 document.addEventListener("scroll", handleScroll);
 
 
-// Project Modals
-const modalOpen = function() {
-	body.classList.add('modal-open')
-}
-
-const modalClose = function() {
-	body.classList.remove('modal-open')
-}
-
-document.addEventListener('click', function (e) {
-	e = e || window.event;
-	let target = e.target;
-
-	if (target.hasAttribute('data-toggle') && target.getAttribute('data-toggle') == 'modal' || target.closest('.primary-btn')) {
-		if (target.hasAttribute('data-target') || target.parent) {
-	  		var modalId = target.getAttribute('data-target');
-	  		document.getElementById(modalId).classList.add('modal-active');
-			e.preventDefault();
-	  		modalOpen();
-		}
-	}
-
-	if ((target.hasAttribute('data-dismiss') && target.getAttribute('data-dismiss') == 'modal') || target.closest('.close-modal') || target.classList.contains('modal')) {
-		var modal = document.querySelector('.modal.modal-active');
-		modal.classList.remove('modal-active');
-		e.preventDefault();
-		modalClose();
-	}
-}, false);
-
-document.body.addEventListener('keydown', (e) => {
-	if (e.key === 'Escape') {
-		console.log(e);
-		document.querySelector('.close-modal').click();  
-	}
-})
-
-
-// About Image Toggle
-const imageToggleBtn = document.querySelector('.image-toggle'),
-	dpWrapper = document.querySelector('.dp-wrapper'),
-	meMaskedOn = 'assets/media/me-masked.webp',
-	meMaskedOff = 'assets/media/me-beach.jpg',
-	dpTitle = document.querySelector('[data-about="dp"] .image');
-
-// imageToggleBtn.addEventListener('click', function() {
-// 	// transform: rotate(180deg);
-// 	imageToggleBtn.classList.toggle('unmasked');
-// 	dpWrapper.classList.toggle('unmasked');
-	
-// 	if (dpWrapper.matches('.unmasked')) {
-// 		dpWrapper.querySelector('source[type="image/webp"]').srcset = meMaskedOff;
-// 		dpWrapper.querySelector('source[type="image/jpeg"]').srcset = meMaskedOff.replace('.webp', '.jpg');
-// 		dpWrapper.querySelector('img').src = meMaskedOff.replace('.webp', '.jpg');
-// 		dpTitle.setAttribute('title', 'it\'s me, happy');
-// 	} else {
-// 		dpWrapper.querySelector('source[type="image/webp"]').srcset = meMaskedOn;
-// 		dpWrapper.querySelector('source[type="image/jpeg"]').srcset = meMaskedOn.replace('.webp', '.jpg');
-// 		dpWrapper.querySelector('img').src = meMaskedOn.replace('.webp', '.jpg');
-// 		dpTitle.setAttribute('title', 'it\'s me');
-// 	}
-// })
-
 
 // Projects Displaying
 const projectTemplate = document.querySelector('[data-waste]');
 const projectContainer = document.querySelector('[data-wastes]');
+const searchForm = document.querySelector('.search-container'); 
 const searchInput = document.getElementById('search-bar');
+const searchIcon = document.querySelector('.search-icon');     
 
 const PROJECT_URL = 'data/work/waste.json';
 const PROJECT_IMAGE_PATH = 'assets/media/waste/';
@@ -183,23 +122,31 @@ fetch(PROJECT_URL)
     renderWastes(wastes);
   });
 
-function createWasteCard(project) {
-  const card = projectTemplate.content.cloneNode(true).children[0];
-
-  const link = card.querySelector('[data-waste-link]');
-  const image = card.querySelector('[data-waste-image]');
-  const title = card.querySelector('[data-waste-title]');
-  const desc = card.querySelector('[data-waste-description]');
-  const year = card.querySelector('[data-waste-year]');
-
-  link.setAttribute('href', project.link || '#');
-  image.src = PROJECT_IMAGE_PATH + project.thumb;
-  title.textContent = project.name;
-  desc.textContent = project.description;
-  year.textContent = project.year || '';
-
-  return card;
-}
+  function createWasteCard(project) {
+	const card = projectTemplate.content.cloneNode(true).children[0];
+  
+	const link = card.querySelector('[data-waste-link]');
+	const image = card.querySelector('[data-waste-image]');
+	const title = card.querySelector('[data-waste-title]');
+	const desc = card.querySelector('[data-waste-description]');
+  
+	const category = card.querySelector('[data-waste-category]');
+	const binColor = card.querySelector('[data-waste-bin-color]');
+	const degradeTime = card.querySelector('[data-waste-degrade]');
+	const stats = card.querySelector('[data-waste-stats]');
+  
+	link.setAttribute('href', project.link || '#');
+	image.src = PROJECT_IMAGE_PATH + project.thumb;
+	title.textContent = project.name;
+	desc.textContent = project.description;
+  
+	category.textContent = project.category.join(', ');
+	binColor.textContent = project.binColor.join(', ');
+	degradeTime.textContent = project.degradeTime;
+	stats.textContent = project.statistics;
+  
+	return card;
+  }
 
 function renderWastes(wasteList) {
   projectContainer.innerHTML = '';
@@ -211,17 +158,110 @@ function renderWastes(wasteList) {
   wasteList.forEach(w => projectContainer.appendChild(w.element));
 }
 
-// Search on typing or pressing Enter
-searchInput.addEventListener('input', handleSearch);
-searchInput.addEventListener('keydown', e => {
-  if (e.key === 'Enter') {
-    e.preventDefault(); // Prevent form submission
-    handleSearch();
-  }
-});
-
 function handleSearch() {
   const term = searchInput.value.toLowerCase();
   const filtered = wastes.filter(w => w.name.toLowerCase().includes(term));
   renderWastes(filtered);
+
+  if (term && filtered.length > 0) {
+	const firstMatchName = filtered[0].name;
+    onSuccessfulSearch(firstMatchName)
+  }
 }
+
+
+  /* ---------- trigger ONLY on Enter or click ---------- */
+  // 1. Enter key submits the form
+  searchForm.addEventListener('submit', e => {
+	e.preventDefault();     // stop actual form post/refresh
+	handleSearch();
+  });
+
+
+  // 2. Click on the search icon
+searchIcon.addEventListener('click', e => {
+	e.preventDefault();     // stop the "#" navigation
+	handleSearch();
+  });
+
+  searchInput.addEventListener('input', () => {
+	if (searchInput.value.trim() === '') {
+	  // If input is cleared, show all items
+	  renderWastes(wastes);
+	}
+  });
+
+
+
+//Rewarding system
+let searchCount = 0;
+let searchTerms = JSON.parse(localStorage.getItem("searchTerms")) || [];
+const stepsPerReward = 3;
+
+const circles = document.querySelectorAll('.progress .circle');
+const bars = document.querySelectorAll('.progress .bar');
+
+function updateProgress() {
+	// Index of the current cycle (0-based)
+	const cycleIndex = Math.floor((searchCount - 1) / 3);
+	const stepInCycle = (searchCount - 1) % 3;
+  
+	// Reset all classes
+	circles.forEach(c => c.classList.remove('done', 'active'));
+	bars.forEach(b => b.classList.remove('done', 'half'));
+  
+	// Mark all previous circles and their 2 bars as done
+	for (let i = 0; i < cycleIndex; i++) {
+	  circles[i].classList.add('done');
+	  if (bars[i * 2]) bars[i * 2].classList.add('done');
+	  if (bars[i * 2 + 1]) bars[i * 2 + 1].classList.add('done');
+	}
+  
+	// Now handle current cycle
+	if (cycleIndex < circles.length) {
+	  if (stepInCycle === 0) {
+		// Search 1, 4, 7... → circle active
+		circles[cycleIndex].classList.add('active');
+	  } else if (stepInCycle === 1) {
+		// Search 2, 5, 8... → first bar done
+		circles[cycleIndex].classList.add('done');
+		if (bars[cycleIndex * 2]) bars[cycleIndex * 2].classList.add('done');
+	  } else if (stepInCycle === 2) {
+		// Search 3, 6, 9... → second bar done
+		circles[cycleIndex].classList.add('done');
+		if (bars[cycleIndex * 2]) bars[cycleIndex * 2].classList.add('done');
+		if (bars[cycleIndex * 2 + 1]) bars[cycleIndex * 2 + 1].classList.add('done');
+	  }
+	}
+  }
+  
+searchCount = searchTerms.length;
+
+function onSuccessfulSearch(wasteName) {
+	
+	if (searchCount > 5){
+		alert("Your Search Reward Point Limit")
+	}else {
+	searchCount++;
+    searchTerms.unshift(wasteName);
+
+    // Remove duplicates and keep only latest 10
+    searchTerms = [...new Set(searchTerms)].slice(0, 10);
+
+    localStorage.setItem("searchTerms", JSON.stringify(searchTerms));
+
+    updateProgress();     // If you're tracking search progress
+    updateTopSearches();  // Update the UI list
+	}
+  }
+
+  function updateTopSearches() {
+	const list = document.getElementById("topSearches");
+	list.innerHTML = "";
+  
+	searchTerms.forEach((term, index) => {
+	  const li = document.createElement("li");
+	  li.textContent = `${index + 1}. ${term}`;
+	  list.appendChild(li);
+	});
+  }
