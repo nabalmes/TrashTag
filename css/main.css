@@ -19,6 +19,7 @@
 		--body-bgi: var(--mesh-bgi--dark);
 		--project-bg: var(--color-dark-032);
 		--nab-text: var(--animated-text--light);
+		--logo-bg: var(--invert-dark);
 	}
 }
 
@@ -37,6 +38,7 @@
 		--body-bgi: var(--mesh-bgi--light);
 		--project-bg: var(--color-light-032);
 		--nab-text: var(--animated-text--dark);
+		--logo-bg: var(--invert-light);
 	}
 }
 
@@ -54,6 +56,7 @@
 	--body-bgi: var(--mesh-bgi--dark);
 	--project-bg: var(--color-dark-032);
 	--nab-text: var(--animated-text--light);
+	--logo-bg: var(--invert-light);
 }
 
 [color-scheme="light"] {
@@ -70,6 +73,7 @@
 	--body-bgi: var(--mesh-bgi--light);
 	--project-bg: var(--color-light-032);
 	--nab-text: var(--animated-text--dark);
+	--logo-bg: var(--invert-dark);
 }
 
 *,
@@ -373,7 +377,7 @@ img {
 
 .main {
 	height: calc(100vh);
-	padding-top: 70px;
+	padding-top: 75px;
 	padding-left: 78px;
 	transition: padding-left .5s ease;
 }
@@ -400,7 +404,7 @@ img {
 }
 
 .page.active>* {
-	animation: slide-up .75s forwards, fade-in .5s forwards;
+	animation: slide-up-safe .75s forwards, fade-in .5s forwards;
 }
 
 .page {
@@ -410,6 +414,10 @@ img {
 
 .hero {
 	max-width: 1600px;
+}
+
+.index.hero {
+	margin-bottom: 50px;
 }
 
 .page:not(.section--home) {
@@ -680,6 +688,8 @@ h1.nab-name {
 
 	transition: .3s;
 	cursor: var(--project-c);
+
+	max-width: 830px;
 }
 
 .project:hover {
@@ -690,10 +700,13 @@ h1.nab-name {
 
 .project>a {
 	all: unset;
+	width: 100%;
 }
 
 .project__image img {
 	width: 100%;
+	max-height: 800px;
+
 }
 
 .project__image img {
@@ -732,7 +745,7 @@ h1.nab-name {
 
 .project__description {
 	font-size: var(--font-size-base);
-	font-weight: 300;
+	font-weight: 500;
 	line-height: var(--space-2);
 	margin-bottom: var(--space-1);
 	text-align: justify;
@@ -878,11 +891,16 @@ h1.nab-name {
 	display: flex;
 }
 
+#about {
+	justify-content: center;
+}
+
 
 /* # about */
 #about>.section-header {
 	max-width: var(--width-600);
 	text-align: unset;
+	margin-bottom: 50px;
 }
 
 .display-name {
@@ -1366,6 +1384,17 @@ h1.nab-name {
 
 	100% {
 		transform: translateY(0%);
+	}
+}
+
+@keyframes slide-up-safe {
+	0% {
+		margin-top: 100px;
+		opacity: 0;
+	}
+	100% {
+		margin-top: 0;
+		opacity: 1;
 	}
 }
 

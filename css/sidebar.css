@@ -1,4 +1,5 @@
 @import url('main.css');
+@import url('root.css');
 
 /* :root{
     --color-default:#004f83;
@@ -56,6 +57,7 @@
   .logo_name img {
     width: 15rem;
     padding-left: 20px;
+    filter: var(--logo-bg);
   }
   
   .sidebar .logo_details #btn{
@@ -300,7 +302,7 @@
   
   /* Form Progress */
   .progress {
-    width: 525px;
+    width: 630px;
     margin: 20px auto;
     text-align: center;
   }
@@ -334,36 +336,39 @@
     font-size: 17px;
   }
   .progress .circle .title {
-    color: #b5b5ba;
-    font-size: 13px;
+    color: var(--text);
+    font-size: 10px;
     line-height: 30px;
     margin-left: -5px;
   }
   
   /* Done / Active */
-  .progress .bar.done,
-  .progress .circle.done {
-    background: #eee;
+  .progress .bar.done{
+    background: #769aca;
+  }
+  .progress .circle.done,
+  .progress .circle.active {
+    background: #05ac7a;
   }
   .progress .bar.active {
     background: linear-gradient(to right, #EEE 40%, #FFF 60%);
   }
   .progress .circle.done .label {
-    color: #FFF;
-    background: #8bc435;
+    color: var(--text);
+    background: #05ac7a;
     box-shadow: inset 0 0 2px rgba(0,0,0,.2);
   }
   .progress .circle.done .title {
-    color: #444;
+    color: var(--text);
   }
   .progress .circle.active .label {
-    color: #FFF;
-    background: #0c95be;
+    color: var(--text);
+    background: #05ac7a;
     box-shadow: inset 0 0 2px rgba(0,0,0,.2);
   }
-  .progress .circle.active .title {
+  /* .progress .circle.active .title {
     color: #0c95be;
-  }
+  } */
 
   /* index search */
 
@@ -419,4 +424,83 @@
   .search-container a {
     position: absolute;
     right: 0;
+  }
+
+  .mid-container {
+    display: flex;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    border-radius: 50px;
+    padding: 20px 0;
+    margin-top: 50px;
+  }
+
+  .content-wrapper{
+    padding: 10px;
+    width: 50%;
+    max-width: 500px;
+  }
+
+  .content-wrapper h3 {
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+  }
+
+  .content-wrapper #topSearches,
+  .content-wrapper p {
+    padding-top: 20px;
+    font-size: var(--font-size-base);;
+  }
+
+  /* loader */
+
+  .main-loader {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(66, 132, 81);
+  
+    z-index: 99999;
+  }
+  
+  .main-loader.load {
+    display: none;
+  }
+  
+  .loader {
+    height: 24px;
+    width: 24px;
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+  }
+  
+  .loader-big {
+    background-color: rgb(8, 192, 72);
+  }
+  
+  .loader-small {
+    width: 0;
+    height: 0;
+    border: 12px solid transparent;
+    border-right: 12px solid white;
+  }
+  
+  .rotate {
+    animation: 1s linear infinite rotate;
+  /*   transform-origin: 50% 100%; */
+  }
+
+  .project__info div{
+    text-align: left;
+    font-size: var(--font-size-base);
+  }
+  
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    } to {
+      transform: rotate(360deg);
+    }
   }
