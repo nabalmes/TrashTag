@@ -30,6 +30,15 @@
 
 </head>
 <body>
+	<div class="main-loader">
+		<div class="load-wrapper">
+			<div class="loader loader-big">
+			</div>
+			<div class="loader loader-small rotate"></div>
+		</div>
+	</div>
+	  
+	  
 	<header class="header">
 		<div class="header-left">
 			<span hidden class="logo-text">NAB</span>
@@ -38,29 +47,27 @@
 			<div class="header-center">
 				<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 				<div class="progress">
-					<div class="circle done">
+					<div class="circle">
 						<span class="label">1</span>
-						<span class="title">Finish</span>
+						<span class="title">Reward1</span>
 					</div>
-					<span class="bar done"></span>
-					<div class="circle done">
+					<span class="bar"></span>
+					<span class="bar"></span>
+					<div class="circle">
 						<span class="label">2</span>
-						<span class="title">Finish</span>
+						<span class="title">Reward2</span>
 					</div>
-					<span class="bar half"></span>
-					<div class="circle active">
+					<span class="bar"></span>
+					<span class="bar"></span>
+					<div class="circle">
 						<span class="label">3</span>
-						<span class="title">Finish</span>
+						<span class="title">Reward3</span>
 					</div>
+					<span class="bar"></span>
 					<span class="bar"></span>
 					<div class="circle">
 						<span class="label">4</span>
-						<span class="title">Finish</span>
-					</div>
-					<span class="bar"></span>
-					<div class="circle">
-						<span class="label">5</span>
-						<span class="title">Finish</span>
+						<span class="title">Reward4</span>
 					</div>
 				</div>
 			</div>
@@ -123,20 +130,6 @@
 			</a>
 			<span class="tooltip">Contact US</span>
 		  </li>
-		  <!-- <li>
-			<a>
-			  <i class="bx bx-cart-alt"></i>
-			  <span class="link_name">Order</span>
-			</a>
-			<span class="tooltip">Order</span>
-		  </li>
-		  <li>
-			<a>
-			  <i class="bx bx-cog"></i>
-			  <span class="link_name">Settings</span>
-			</a>
-			<span class="tooltip">Settings</span>
-		  </li> -->
 		  <li class="profile">
 			<div class="profile_details">
 			  <img src="profile.jpg" alt="profile image">
@@ -152,17 +145,27 @@
 	<main class="main">
 		
 		<section id="home" class="page section--home active">
-			<div class="hero">
+			<div class="index hero">
 				<h1 class="nab-name">
 					<span>TRASH</span>
 					<span>TAG </span>
 				</h1>
 				<p class="nab-lead">SCAN, SORT, EARN REWARDS</p>
 			</div>
+			<div class="mid-container">
+				<div class="content-wrapper">
+					<h3>Global News On Waste</h3>
+					<p>Municipal solid waste generation is predicted to grow from 2.1 billion tonnes in 2023 to 3.8 billion tonnes by 2050. In 2020, the global direct cost of waste management was an estimated USD 252 billion. When factoring in the hidden costs of pollution, poor health and climate change from poor waste disposal practices, the cost rises to USD 361 billion. Without urgent action on waste management, by 2050 this global annual cost could almost double to a staggering USD 640.3 billion.</p>
+				</div>
+				<div class="content-wrapper">
+					<h3>Top 10 Searched Wastes</h3>
+					<ul id="topSearches"></ul>
+				</div>
+			</div>
 			<form class="search-container">
 				<input type="text" id="search-bar" placeholder="What kind of waste do you have?">
 				<a href="#"><img class="search-icon" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"></a>
-			</form>
+			</form>	
 			<div class="section-body projects-wrapper">
 				<div class="projects-header">
 					<div class="projects-header__tabs">
@@ -170,38 +173,36 @@
 							<a href="#!">All</a>
 						</div>
 					</div>
-					<!-- <div class="projects-header__filter">
-						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-filter"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
-
-						
-							Filter:
-							by Year
-							by Name
-						
-					</div> -->
 				</div>
 
 				<div class="projects" data-wastes></div>
 
 				<template data-waste>
 					<article class="project">
-						<a data-waste-link target="_blank" rel="noopener noreferrer">
-							<div class="project__image">
-								<img src="" alt="" data-waste-image>
+					  <a data-waste-link target="_blank" rel="noopener noreferrer">
+						<div class="project__image">
+						  <img src="" alt="" data-waste-image>
+						</div>
+				  
+						<div class="project__content">
+						  <div class="project__text">
+							<div class="project__title" data-waste-title></div>
+							<div class="project__description" data-waste-description></div>
+							
+							<!-- New fields -->
+							<div class="project__info">
+							  <div><strong>Categories:</strong> <span data-waste-category></span></div>
+							  <div><strong>Bin Color:</strong> <span data-waste-bin-color></span></div>
+							  <div><strong>Degrade Time:</strong> <span data-waste-degrade></span></div>
+							  <div><strong>Statistics:</strong> <span data-waste-stats></span></div>
 							</div>
-	
-							<div class="project__content">
-								<div class="project__text">
-									<div class="project__title" data-waste-title></div>
-									<div class="project__description" data-waste-description></div>
-									<div class="project__year" data-waste-year></div>
-								</div>
-								<div class="project__right">
-								</div>
-							</div>
-						</a>
+						  </div>
+				  
+						  <div class="project__right"></div>
+						</div>
+					  </a>
 					</article>
-				</template>
+				  </template>
 					
 				<div hidden class="project-cursor">
 					<span class="project-cursor__text">View Project</span>
@@ -209,12 +210,6 @@
 			</div>
 		</section>
 	</main>
-
-	<!-- <footer hidden class="footer">
-		<div class="copyright">
-			&copy; 1995 - <span class="year"></span> Neil Adrian Balmes. All rights reserved.
-		</div>
-	</footer> -->
 
 	<button class="scroll-button">
 		<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
@@ -281,6 +276,9 @@
 
 		// Call the initializer after the DOM is fully loaded
 		document.addEventListener('DOMContentLoaded', function () {
+			let loader = document.getElementsByClassName("main-loader")[0];
+			console.log(loader);
+			loader.classList.add("load");
 			initializeSidebarToggle();
 
 
