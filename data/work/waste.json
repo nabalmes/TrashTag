@@ -1,162 +1,157 @@
 [
 	{
-		"id": 1,
-		"codename": "project1",
-		"name": "Paper",
-		"alias": "iNet",
-		"description": "This category includes materials made from paper, a compacted sheet of cellulose fibers or flattened tree pulp. They are highly flammable due to their thin, dry and porous nature, as well as their fairly low (auto)ignition temperature at 481°F.",
-		"tag": "web",
-		"year": "2022",
-		"icon": "icon1",
-		"thumb": "waste1.jpg"
+	  "id": 1,
+	  "name": "Paper",
+	  "description": "This category includes materials made from paper, a compacted sheet of cellulose fibers or flattened tree pulp. They are highly flammable due to their thin, dry and porous nature, as well as their fairly low (auto)ignition temperature at 481°F.",
+	
+	  "thumb": "waste1.jpg",
+	  "category": ["Paper", "Biodegradable Waste", "Dry General Waste"],
+	  "binColor": ["Blue", "Green", "Black"],
+	  "degradeTime": "2 to 6 weeks",
+	  "statistics": "The Philippines generates about 4.2 million tons of paper waste yearly but only 20% of that is being recycled."
 	},
 	{
-		"id": 2,
-		"codename": "project2",
-		"name": "Plastic Bottle",
-		"alias": "BPO",
-		"description": "This category includes bottles made from plastic, a synthetic or semi-synthetic material of polymers usually derived from petrochemicals. They are lightweight, versatile, and durable.",
-		"tag": "web",
-		"year": "2022",
-		"icon": "icon2",
-		"thumb": "waste2.jpg"
+	  "id": 2,
+	  "name": "Plastic Bottle",
+	  "description": "This category includes bottles made from plastic, a synthetic or semi-synthetic material of polymers usually derived from petrochemicals. They are lightweight, versatile, and durable.",
+	
+	  "thumb": "waste2.jpg",
+	  "category": ["Recyclable", "Nonbiodegradable"],
+	  "binColor": ["Blue", "Black"],
+	  "degradeTime": "450 to 1,000 years",
+	  "statistics": "On average, 163 million PET bottles are being dumped daily by Filipinos, and only 9% of that is being recycled."
 	},
 	{
-		"id": 3,
-		"codename": "project3",
-		"name": "Aluminum Soda Can",
-		"alias": "PBX",
-		"description": "This category includes cans made from aluminum, a material that is odorless, non-toxic, lightweight, and corrosion resistant.",
-		"tag": "web",
-		"year": "2022",
-		"icon": "icon3",
-		"thumb": "waste3.jpg"
+	  "id": 3,
+	  "name": "Aluminum Soda Can",
+	  "description": "This category includes cans made from aluminum, a material that is odorless, non-toxic, lightweight, and corrosion resistant.",
+	
+	  "thumb": "waste3.jpg",
+	  "category": ["Recyclable", "Nonbiodegradable"],
+	  "binColor": ["Blue", "Black"],
+	  "degradeTime": "450 to 1,000 years",
+	  "statistics": "Aluminum is one of the most recycled materials globally, with approximately 75 percent of all aluminum ever produced still being in use."
 	},
 	{
-		"id": 4,
-		"codename": "project4",
-		"name": "Broken Glass",
-		"alias": "PCI",
-		"description": "This category includes pieces of shattered glass that pose a risk of puncture and cuts if handled incorrectly.",
-		"tag": "web",
-		"year": "2022",
-		"icon": "icon4",
-		"thumb": "waste4.jpg"
+	  "id": 4,
+	  "name": "Broken Glass",
+	  "description": "This category includes pieces of shattered glass that pose a risk of puncture and cuts if handled incorrectly.",
+	
+	  "thumb": "waste4.jpg",
+	  "category": ["Sharps"],
+	  "binColor": ["Red"],
+	  "degradeTime": "Does not biodegrade",
+	  "statistics": "Glass makes up 5% of the landfill waste in the Philippines but only 30% of it is recovered due to improper segregation."
 	},
 	{
-		"id": 5,
-		"codename": "project5",
-		"name": "Battery",
-		"alias": "Share Events",
-		"description": "This category includes all kinds of batteries from alkaline to lithium-ion. They are corrosive, flammable, and toxic.",
-		"tag": "web",
-		"year": "2022",
-		"icon": "icon5",
-		"thumb": "waste5.jpg"
+	  "id": 5,
+	  "name": "Battery",
+	  "description": "This category includes all kinds of batteries from alkaline to lithium-ion. They are corrosive, flammable, and toxic.",
+	
+	  "thumb": "waste5.jpg",
+	  "category": ["Toxic/Hazardous"],
+	  "binColor": ["Red"],
+	  "degradeTime": "More than 100 years",
+	  "statistics": "In the Philippines, 95% of used batteries end up in landfills and contaminate nearby soil and water."
 	},
 	{
-		"id": 6,
-		"codename": "project6",
-		"name": "Snack Wrappers",
-		"alias": "Pudding",
-		"description": "They could be plastic-based wrappers from sandwich, candy, chips, etc.",
-		"tag": "web",
-		"year": "2022",
-		"icon": "icon6",
-		"thumb": "waste6.jpg"
+	  "id": 6,
+	  "name": "Snack Wrappers",
+	  "description": "They could be plastic-based wrappers from sandwich, candy, chips, etc.",
+	
+	  "thumb": "waste6.jpg",
+	  "category": ["Non-biodegradable", "Plastic"],
+	  "binColor": ["Black"],
+	  "degradeTime": "20-100 years",
+	  "statistics": "Millions are discarded daily; they contribute significantly to ocean microplastic pollution."
 	},
 	{
-		"id": 7,
-		"codename": "project7",
-		"name": "Tissue",
-		"alias": "Luks",
-		"description": "They could be used paper tissue, facial wipes, table napkins, etc.",
-		"tag": "web",
-		"year": "2022",
-		"icon": "icon7",
-		"thumb": "waste7.jpg"
+	  "id": 7,
+	  "name": "Tissue",
+	  "description": "They could be used paper tissue, facial wipes, table napkins, etc.",
+	
+	  "thumb": "waste7.jpg",
+	  "category": ["Biodegradable", "Paper"],
+	  "binColor": ["Green"],
+	  "degradeTime": "2-4 weeks",
+	  "statistics": "Over 270,000 trees are cut daily to produce tissue products."
 	},
 	{
-		"id": 8,
-		"codename": "project8",
-		"name": "tyro (Polystyrene)",
-		"alias": "Zumumu",
-		"description": "Foam packaging or containers often used for food.",
-		"tag": "web",
-		"year": "2022",
-		"icon": "icon8",
-		"thumb": "waste8.jpg"
+	  "id": 8,
+	  "name": "tyro (Polystyrene)",
+	  "description": "Foam packaging or containers often used for food.",
+	
+	  "thumb": "waste8.jpg",
+	  "category": ["NB", "Plastic"],
+	  "binColor": ["Black"],
+	  "degradeTime": "500+ years (some say never fully)",
+	  "statistics": "Takes up 30% of landfill space globally; rarely recycled."
 	},
-
 	{
-		"id": 9,
-		"codename": "project12",
-		"name": "Used Stationery Items",
-		"alias": "ID Alibi Device Apps",
-		"description": "They could be used pens, coloring material made of plastic casings and ink components.",
-		"tag": "web",
-		"year": "2023",
-		"icon": "icon9",
-		"thumb": "waste9.jpg"
+	  "id": 9,
+	  "name": "Used Stationery Items",
+	  "description": "They could be used pens, coloring material made of plastic casings and ink components.",
+	
+	  "thumb": "waste9.jpg",
+	  "category": ["NB", "Mixed"],
+	  "binColor": ["Black"],
+	  "degradeTime": "500+ years",
+	  "statistics": "An estimated 1.6 billion disposable pens are discarded each year in the U.S. alone."
 	},
-
 	{
-		"id": 10,
-		"codename": "project12",
-		"name": "Plastic Utensils",
-		"alias": "ID Alibi Device Apps",
-		"description": "They could be single-use spoons, forks, knives.",
-		"tag": "web",
-		"year": "2023",
-		"icon": "icon9",
-		"thumb": "waste10.jpg"
+	  "id": 10,
+	  "name": "Plastic Utensils",
+	  "description": "They could be single-use spoons, forks, knives.",
+	
+	  "thumb": "waste10.jpg",
+	  "category": ["NB", "Plastic"],
+	  "binColor": ["Black"],
+	  "degradeTime": "400-1000 years",
+	  "statistics": "Over 40 billion plastic utensils are used and thrown away each year in the U.S."
 	},
-
 	{
-		"id": 11,
-		"codename": "project12",
-		"name": "Aluminum Foil",
-		"alias": "ID Alibi Device Apps",
-		"description": "Foil used in cooking or packaging.",
-		"tag": "web",
-		"year": "2023",
-		"icon": "icon9",
-		"thumb": "waste11.jpg"
+	  "id": 11,
+	  "name": "Aluminum Foil",
+	  "description": "Foil used in cooking or packaging.",
+	
+	  "thumb": "waste11.jpg",
+	  "category": ["Recyclable (if clean)"],
+	  "binColor": ["Blue"],
+	  "degradeTime": "200-500 years (if not recycled)",
+	  "statistics": "Recycling one aluminum can saves enough energy to run a TV for 3 hours."
 	},
-
 	{
-		"id": 12,
-		"codename": "project12",
-		"name": "Banana Peel",
-		"alias": "ID Alibi Device Apps",
-		"description": "Organic kitchen waste that decomposes quickly under the right conditions.",
-		"tag": "web",
-		"year": "2023",
-		"icon": "icon9",
-		"thumb": "waste12.jpg"
+	  "id": 12,
+	  "name": "Banana Peel",
+	  "description": "Organic kitchen waste that decomposes quickly under the right conditions.",
+	
+	  "thumb": "waste12.jpg",
+	  "category": ["Biodegradable"],
+	  "binColor": ["Green"],
+	  "degradeTime": "2-5 weeks",
+	  "statistics": "Food waste makes up over 30% of municipal garbage globally."
 	},
-
 	{
-		"id": 13,
-		"codename": "project12",
-		"name": "Cottons",
-		"alias": "ID Alibi Device Apps",
-		"description": "Used in personal hygiene and cosmetics; plant-based but often mixed with plastic. Compost clean, pure cotton only.",
-		"tag": "web",
-		"year": "2023",
-		"icon": "icon9",
-		"thumb": "waste13.jpg"
+	  "id": 13,
+	  "name": "Cottons",
+	  "description": "Used in personal hygiene and cosmetics; plant-based but often mixed with plastic. Compost clean, pure cotton only.",
+	
+	  "thumb": "waste13.jpg",
+	  "category": ["Biodegradable"],
+	  "binColor": ["Green", "Black", "Gray"],
+	  "degradeTime": "1-5 months (depends if pure and composted properly)",
+	  "statistics": "Globally, billions of cotton swabs and pads are discarded annually. Plastic parts hinder biodegradability."
 	},
-
 	{
-		"id": 14,
-		"codename": "project12",
-		"name": "Face Mask",
-		"alias": "ID Alibi Device Apps",
-		"description": "Primarily made from polypropylene and often includes metal nose strips and elastic ear loops.",
-		"tag": "web",
-		"year": "2023",
-		"icon": "icon9",
-		"thumb": "waste14.jpg"
+	  "id": 14,
+	  "name": "Face Mask",
+	  "description": "Primarily made from polypropylene and often includes metal nose strips and elastic ear loops.",
+	
+	  "thumb": "waste14.jpg",
+	  "category": ["Non-Biodegradable"],
+	  "binColor": ["Red", "Yellow"],
+	  "degradeTime": "450 years or more",
+	  "statistics": "An estimated 129 billion face masks are used globally each month since COVID-19."
 	}
-]
+  ]
+  
