@@ -124,8 +124,7 @@ fetch(PROJECT_URL)
 
   function createWasteCard(project) {
 	const card = projectTemplate.content.cloneNode(true).children[0];
-  
-	const link = card.querySelector('[data-waste-link]');
+
 	const image = card.querySelector('[data-waste-image]');
 	const title = card.querySelector('[data-waste-title]');
 	const desc = card.querySelector('[data-waste-description]');
@@ -134,8 +133,7 @@ fetch(PROJECT_URL)
 	const binColor = card.querySelector('[data-waste-bin-color]');
 	const degradeTime = card.querySelector('[data-waste-degrade]');
 	const stats = card.querySelector('[data-waste-stats]');
-  
-	link.setAttribute('href', project.link || '#');
+
 	image.src = PROJECT_IMAGE_PATH + project.thumb;
 	title.textContent = project.name;
 	desc.textContent = project.description;
@@ -265,3 +263,8 @@ function onSuccessfulSearch(wasteName) {
 	  list.appendChild(li);
 	});
   }
+
+  document.addEventListener('DOMContentLoaded', function () {
+	updateTopSearches()
+	updateProgress()
+  })
