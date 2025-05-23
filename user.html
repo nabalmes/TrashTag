@@ -32,7 +32,7 @@
 <style>
 	.login-box {
   position: relative;
-  width: 400px;
+  width: 100%;
   height: 450px;
   background: #f3f3f314;
   border-radius: 15px;
@@ -117,6 +117,11 @@ h2 {
 
 .input-box input {
 	pointer-events: none;
+}
+
+.section-header .mid-container {
+	margin-bottom: 50px;
+	padding: 20px;
 }
 
 
@@ -245,6 +250,14 @@ h2 {
 	<main class="main">
 		<section id="about" class="page section--about active">
 			<div class="section-header">
+				<div class="mid-container">
+					<div class="content-wrapper">
+						<h3>Reward Progress:</h3>
+					</div>
+					<div class="content-wrapper">
+						<h3 id="reward-progress">1 Out of 10</h3>
+					</div>
+				</div>
 				<div id="login-card" class="login-box expand">
 					<form id="sign-up__form" action="" class="flip">
 						<h2>Information</h2>
@@ -292,7 +305,7 @@ h2 {
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/draggable/1.0.0-beta.12/draggable.min.js"></script>
 	
-	<!-- <script type="module" src="js/app.js"></script> -->
+	<script type="module" src="js/app.js"></script>
 	<script type="module" src="js/theme.js"></script>
 
 	<script>
@@ -340,18 +353,6 @@ h2 {
 			window.location.href = 'login.html';
 		}
 
-		// function adjustContainerWidth() {
-		// 	const closeBtn = document.querySelector('#btn');
-		// 	const sidenav = document.querySelector('.sidebar');
-			
-
-		// 	closeBtn.addEventListener("click", () => {
-		// 		header.classList.toggle("adjust");
-		// 		container.classList.toggle("adjust");
-		// 	})
-		// }
-
-		// Call the initializer after the DOM is fully loaded
 		document.addEventListener('DOMContentLoaded', function () {
 			let loader = document.getElementsByClassName("main-loader")[0];
 			console.log(loader);
@@ -379,7 +380,17 @@ h2 {
 				document.getElementById('password').value = user.password || '';
 			}
 
-			
+			const stored = localStorage.getItem('searchTerms');
+			const total = 10;
+			let current = 0;
+
+			if (stored) {
+				const searchTerms = JSON.parse(stored);
+				current = searchTerms.length;
+			}
+
+			document.getElementById('reward-progress').textContent = `${current} Out of ${total}`;
+					
 		});
 	</script>
 </body>
