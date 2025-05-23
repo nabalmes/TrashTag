@@ -379,6 +379,11 @@
     align-items: center;
     padding-top: 5rem;
   }
+
+  .search-wrapper {
+    width: 490px;
+    position: relative;
+  }
   
   input#search-bar {
     margin: 0 auto;
@@ -423,7 +428,8 @@
   
   .search-container a {
     position: absolute;
-    right: 0;
+    right: -15px;
+    top: -15px;
   }
 
   .mid-container {
@@ -439,6 +445,9 @@
     padding: 10px;
     width: 50%;
     max-width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .content-wrapper h3 {
