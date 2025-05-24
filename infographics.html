@@ -207,7 +207,7 @@
 				<div class="designation">User</div>
 			  </div>
 			</div>
-			<i class="bx bx-log-out" id="log_out" role="button" tabindex="0" (click)="logOut()"></i>
+			<i class="bx bx-log-out" id="log_out" role="button" tabindex="0" onclick="logout()"></i>
 		  </li>
 		</ul>
 	</div>
@@ -313,7 +313,10 @@
 		// 	})
 		// }
 
-
+		function logout() {
+			sessionStorage.removeItem('user');
+			window.location.href = 'login.html';
+		}
 
 		// Call the initializer after the DOM is fully loaded
 		document.addEventListener('DOMContentLoaded', function () {
